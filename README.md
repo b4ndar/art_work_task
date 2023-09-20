@@ -1,6 +1,5 @@
 # Art Work App **🎨**
 
-This is a Flutter app that utilizes Firebase and Firestore for data storage and user authentication. In this readme, you will find instructions on how to set up and run the app, as well as details on how to create a Firebase project, set up Firestore, and provide a backup database for your app.
 
 ## **Table of Contents**
 
