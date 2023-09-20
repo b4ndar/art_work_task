@@ -83,10 +83,15 @@ Before you begin, ensure you have met the following requirements:
 
     - Download the Firestore backup from the following link: **[Firestore Backup]([(https://drive.google.com/file/d/1ZNlTWtkw1lrBXMJyGCeMrNzQIm_jqEh_/view?usp=sharing)]**.
     - Import the backup into your Firebase project by following these steps:
-        - In the Firebase Console, go to Firestore Database.
-        - Click on "Data" in the left menu.
-        - At the top, click on "Import" and select the Firestore backup file you downloaded.
-        - Click "Restore." Firebase will import the data from the backup.
+        - Create a new Firestore database .
+        - In the Firebase Console, go to Prject Setting . 
+        - Service account and then Generate new private key . 
+        - Use the following command in the directory folder where you have backup file and genereted key
+       ```bash
+        bashCopy code
+        npx -p node-firestore-import-export firestore-import -a <genereted key file here> -b <backfile here>
+    
+        ```
 
 ---
 
