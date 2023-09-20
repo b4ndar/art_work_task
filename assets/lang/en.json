@@ -1,0 +1,16 @@
+{
+"hello": "Hello",
+"lets_get_exercise": "Let's Get Exercise",
+"email": "Email Address",
+"password": "Password",
+"login": "Login",
+"reset_password": "Reset Password",
+"popular_exercise": "Popular Exercise",
+"cycling": "Cycling",
+"running": "Running",
+"swimming": "Swimming",
+"cross_fit": "Cross Fit",
+"todays_course": "Today's Course",
+"sign_out": "Sign out",
+"password_is_short": "The Password should be more then 5"
+}

@@ -1,0 +1,16 @@
+{
+"hello": "مرحبا",
+"lets_get_exercise": "هيا بنا لنتمرن!",
+"email": "البريد الإلكتروني",
+"password": "كلمة المرور",
+"login": "تسجيل دخول",
+"reset_password": "تغيير كلمة المرور",
+"popular_exercise": "تمارين شعبية",
+"cycling": "ركوب الدراجات",
+"running": "الجري",
+"swimming": "السباحة",
+"cross_fit": "لياقة عالي الكثافة",
+"todays_course": "دورة اليوم",
+"sign_out": "تسجيل الخروج",
+"password_is_short": "كلمة المرور يجب ان تكون اكثر من خمسة احرف"
+}
