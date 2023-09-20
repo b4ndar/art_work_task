@@ -25,19 +25,11 @@ Before you begin, ensure you have met the following requirements:
 
     ```bash
     bashCopy code
-    git clone https://github.com/your-username/flutter-firebase-firestore-app.git
+    git clone https://github.com/b4ndar/art_work_task
     
     ```
 
-2. Change to the project directory:
-
-    ```bash
-    bashCopy code
-    cd flutter-firebase-firestore-app
-    
-    ```
-
-3. Run the following command to fetch dependencies:
+2. Run the following command to fetch dependencies:
 
     ```bash
     bashCopy code
