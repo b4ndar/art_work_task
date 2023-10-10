@@ -1,8 +1,9 @@
 /// packages
 import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
-
+import '../../../../core/error/failures.dart';
 
 /// imports
 import '../../home.dart';
@@ -15,14 +16,12 @@ class ExerciseProvider extends ChangeNotifier {
 
   ExerciseProvider(this.getExerciseUseCase);
 
-  Future<void> fetchExercises() async {
-    try {
-      exercises = await getExerciseUseCase!.call();
+  Future<Either<Failure, List<ExerciseEntity>?>> fetchExercises() async {
+    final result = await getExerciseUseCase!.call();
+    return result.fold((l) => Left(Failure(l.toString())), (r) {
+      exercises = r!;
       notifyListeners();
-    } catch (e) {
-      // Handle any errors or exceptions that may occur during the fetch
-      log("Error fetching exercises: $e");
-    }
+      return Right(r);
+    });
   }
-
 }

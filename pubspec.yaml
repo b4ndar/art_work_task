@@ -45,14 +45,15 @@ dependencies:
   #data Format
   intl: ^0.18.1
 
-  retrofit: ^4.0.1
   easy_localization: ^3.0.3
   cloud_firestore: ^4.9.1
   #
   shared_preferences: ^2.2.1
-
+  # cache app data
   cached_network_image: ^3.2.3
   flutter_cache_manager: ^3.3.1
+  # show awesome snackBars!
+  awesome_snackbar_content: ^0.1.3
 
 dev_dependencies:
   flutter_test:

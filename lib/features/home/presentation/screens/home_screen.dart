@@ -68,11 +68,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           PopupMenuItem(
                             child: MenuButtonWelcome(userName: authProvider.user!.email ,),
                           ),PopupMenuItem(
-                            child: const Text("انحليزي"),onTap: () =>
+                            child: Text("english_lang".tr()),onTap: () =>
                               setState(() {context.setLocale(const Locale('en'));}),
                           ),
                           PopupMenuItem(
-                              child: const Text("عربي"),onTap: () =>
+                              child: Text("arabic_lang".tr()),onTap: () =>
                               setState(() {context.setLocale(const Locale('ar'));})
                           ),
                         ],

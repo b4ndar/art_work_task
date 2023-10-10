@@ -1,5 +1,7 @@
 /// imports
 
+import 'package:art_work/features/home/presentation/exercise.dart';
+
 import '../../../../core/core.dart';
 import '../widgets/auth_widgets.dart';
 /// packages
@@ -27,27 +29,36 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: CommonBackground(
-        child: Container(
-          width: double.infinity,
-          height: responsive.screenHeight,
-          padding: const EdgeInsets.symmetric(horizontal: 30),
-          child: Column(
-            children: [
-              SizedBox(
-                height: responsive.screenHeight / 4,
+        child: SafeArea(
+          child: Container(
+            width: double.infinity,
+            height: responsive.screenHeight,
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(
+                    height: 100,
+                  ),
+                  // const UserWelcomeWidget(),
+                  SizedBox(
+                    height: responsive.screenHeight / 10,
+                  ),
+                  const LogoWidget(),
+                  SizedBox(
+                    height: responsive.screenHeight / 17,
+                  ),
+                  SizedBox(
+                    height: responsive.screenHeight/2,
+                    child: CustomForm(
+                      emailController: _controllerEmail,
+                      paawordController: _controllerPassword,
+                    ),
+                  )
+                ],
               ),
-              const LogoWidget(),
-              SizedBox(
-                height: responsive.screenHeight / 17,
-              ),
-              SizedBox(
-                height: responsive.screenHeight/2,
-                child: CustomForm(
-                  emailController: _controllerEmail,
-                  paawordController: _controllerPassword,
-                ),
-              )
-            ],
+            ),
           ),
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.

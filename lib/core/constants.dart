@@ -9,6 +9,7 @@ final List<String> exerciseImages = [
   'assets/video.png',
 ];
 
+/// used for testing
 final List<String> popularExerciseIcons = [
   'assets/cycling.svg',
   'assets/runIcon.svg',
@@ -17,7 +18,7 @@ final List<String> popularExerciseIcons = [
   'assets/weights.svg',
 ];
 
-
+/// used for testing
 final List<String> exerciseTitle = [
   'Cycling',
   'Running',
@@ -26,5 +27,8 @@ final List<String> exerciseTitle = [
   'Running',
 ];
 
-final gradientColors = [const Color(0xFFFD0C92), const Color(0xFFFFAA92)];
-final disableGradientColor = [Colors.blueGrey, Colors.blueGrey,];
+class AppColors {
+  static const Color primaryColor = Color(0xffFD0C92);
+  static const primaryGradient = [Color(0xFFFD0C92), Color(0xFFFFAA92)];
+  static const disableGradientColor = [Colors.blueGrey, Colors.blueGrey,];
+}

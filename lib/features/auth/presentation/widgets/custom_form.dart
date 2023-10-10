@@ -31,23 +31,25 @@ class _CustomFormState extends State<CustomForm> {
     /// login form
     return Form(
       key: _fKey,
-      child: Column(
-        children: [
-          /// Email field
-          LoginTextField(
-            label: 'email'.tr(),
-            controller: widget.emailController,
-            isPassword: false,
-          ),
-          /// Password Field
-          LoginTextField(
-            label: 'password'.tr(),
-            controller: widget.paawordController,
-            isPassword: true,
-          ),
-          /// Submit Button
-          SubmitButton(fKey: _fKey, authProvider: authProvider, widget: widget,),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            /// Email field
+            LoginTextField(
+              label: 'email'.tr(),
+              controller: widget.emailController,
+              isPassword: false,
+            ),
+            /// Password Field
+            LoginTextField(
+              label: 'password'.tr(),
+              controller: widget.paawordController,
+              isPassword: true,
+            ),
+            /// Submit Button
+            SubmitButton(fKey: _fKey, authProvider: authProvider, widget: widget,),
+          ],
+        ),
       ),
     );
   }
