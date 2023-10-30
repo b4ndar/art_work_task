@@ -1,6 +1,8 @@
 /// imports
 import 'package:art_work/features/auth/data/models/login_model.dart';
+import 'package:dartz/dartz.dart';
 
+import '../../../../core/error/failures.dart';
 import '../../domain/auth_domain.dart';
 /// packages
 import 'dart:developer';
@@ -17,17 +19,23 @@ class AuthenticationProvider extends ChangeNotifier {
 
   AuthenticationProvider(this.loginUseCase,this.logOutUseCase,this.getCurrentUserUseCase);
 
-  Future<void> login(LoginCredentials loginCredentials) async {
+  Future<Either<Failure, User?>> login(LoginCredentials loginCredentials) async {
     try {
-      user = await loginUseCase!.call(params: loginCredentials);
-      notifyListeners();
+      final result = await loginUseCase!.call(params: loginCredentials);
+      if (result.isRight()) {
+        user = result.getOrElse(() => null);
+        notifyListeners();
+      }
+      return result;
     } catch (e) {
       log("Error fetching exercises: $e");
+      return Left(Failure(e.toString())); // Convert the exception to a Failure
     }
   }
 
   Future<void> logOut() async {
     try {
+      print("g");
       await logOutUseCase!.call();
       notifyListeners();
     } catch (e) {
@@ -35,8 +43,9 @@ class AuthenticationProvider extends ChangeNotifier {
     }
   }
 
-  Future<User?> getCurrentUser() async {
-    user = await getCurrentUserUseCase!.call();
+  Future<Either<Failure, User?>> getCurrentUser() async {
+    final result = await getCurrentUserUseCase!.call();
+    return result.fold((l) => Left(l), (r) => Right(r));
     notifyListeners();
   }
 

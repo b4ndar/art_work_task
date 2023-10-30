@@ -12,9 +12,8 @@ class CustomBottomBar extends StatelessWidget {
     final responsive = ResponsiveHelper(context);
     return Container(
       width: double.infinity,
-      height: 120,
-      color: Color(0xFF212338),
-      // Color(0xFF212338), Color(0xFF363667)
+      height: responsive.screenHeight/7,
+      color: const Color(0xFF212338),
       child: Center(
         child: Stack(
           alignment: Alignment.center,
@@ -24,7 +23,7 @@ class CustomBottomBar extends StatelessWidget {
               bottom: 0,
               child: Container(
                 width: responsive.screenWidth,
-                height: 100,
+                height: responsive.screenHeight/10,
                 decoration: const ShapeDecoration(
                   color: Color(0xFF373856),
                   shape: RoundedRectangleBorder(
@@ -55,7 +54,7 @@ class CustomBottomBar extends StatelessWidget {
                     ),
                   ),
                 ),
-                child: const Icon(Icons.home,color: Colors.white,),
+                child: InkWell(onTap: () {print(responsive.screenHeight/6);},child: const Icon(Icons.home,color: Colors.white)),
               ),
             ),
           ],

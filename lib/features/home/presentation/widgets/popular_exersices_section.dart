@@ -34,7 +34,7 @@ class _PopularExerciseState extends State<PopularExercise> {
     final gradient = LinearGradient(
       begin: const Alignment(0.0, 1.00),
       end: const Alignment(0, -1),
-      colors: gradientColors,
+      colors: AppColors.primaryGradient,
     );
 
     final white = LinearGradient(
@@ -82,7 +82,7 @@ class _PopularExerciseState extends State<PopularExercise> {
                             return LinearGradient(
                               colors: index == selectedIndex
                                   ? gradientWhite
-                                  : gradientColors,
+                                  : AppColors.primaryGradient,
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
                             ).createShader(bounds);

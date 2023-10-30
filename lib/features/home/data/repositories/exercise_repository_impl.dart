@@ -1,7 +1,10 @@
 import 'package:art_work/features/home/data/models/exercise.dart';
 import 'package:art_work/features/home/domain/repositories/home_repository.dart';
+import 'package:dartz/dartz.dart';
 import '../../../../core/data_sources/remote.dart';
+import '../../../../core/error/failures.dart';
 import '../../../../core/network.dart';
+import '../../domain/entities/exercise.dart';
 
 
 class ExerciseRepositoryImpl implements ExerciseRepository {
@@ -14,7 +17,7 @@ class ExerciseRepositoryImpl implements ExerciseRepository {
   }
 
   @override
-  Future<List<ExerciseModel>> getExercises() async{
+  Future<Either<Failure,List<ExerciseEntity>?>> getExercises() async{
     List<ExerciseModel> articles = [];
     if (await hasInternetConnection()) {
       try {
@@ -33,10 +36,10 @@ class ExerciseRepositoryImpl implements ExerciseRepository {
             articles.add(article);
           }
         }
-        return articles;
+        return Right(articles);
       } catch (e) {
         print("Error getting articles: $e");
-        return articles; // Return an empty list in case of an error
+        return Left(Failure('Error getting articles: $e')); // Return an empty list in case of an error
       }
     } else {
       throw Exception('No internet connection');
